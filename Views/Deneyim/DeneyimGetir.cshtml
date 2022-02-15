@@ -1,0 +1,41 @@
+﻿@model My_CV.Models.Entity.TBL_Deneyimler
+@{
+    ViewBag.Title = "DeneyimGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content-header">
+    <h2>Deneyim Güncelleme</h2>
+
+    <form method="post">
+        <ul class="fa-ul mb-md-5">
+            <li class="mb-3">
+            
+                @Html.Label("Deneyim ID", new {@class="form-control"})
+                @Html.TextBoxFor(x => x.ID)
+            </li>
+            <li class="mb-3">
+               
+                @Html.Label("Başlık", new { @class = "form-control" })
+                @Html.TextBoxFor(x => x.Baslik)
+            </li>
+            <li class="mb-3">
+               
+                @Html.Label("AltBaşlık", new { @class = "form-control" })
+                @Html.TextBoxFor(x => x.AltBaslik)
+
+            </li>
+            <li class="mb-3">
+                
+                @Html.Label("Açıklama", new { @class = "form-control" })
+                @Html.TextAreaFor(x => x.Aciklama)
+            </li>
+            <li class="mb-3">
+                
+                @Html.Label("Tarih", new { @class = "form-control" })
+                @Html.TextAreaFor(x => x.Tarih)
+            </li>
+                <button class="btn btn-info"> Güncelle</button>
+        </ul>
+    </form>
+</section>

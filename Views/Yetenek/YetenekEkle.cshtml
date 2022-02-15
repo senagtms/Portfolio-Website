@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "YetenekEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<section class="content-header">
+    <h2>Yeni Yetenek Ekle</h2>
+
+    <form class="form-group" method="post">
+        <ul class="fa-ul mb-md-5">
+
+
+            <li class="mb-3">
+                <span class="subheading mb-5"></span>
+                <label>Yetenek</label>
+                <textarea class="form-control" name="Yetenek" rows="5"></textarea>
+            </li>
+
+            <li class="mb-3">
+                <span class="subheading mb-5"></span>
+                <label>Oran</label>
+                <input type="text" class="form-control" name="Oran" />
+            </li>
+            <button class="btn btn-info"> Kaydet</button>
+
+        </ul>
+    </form>
+</section>

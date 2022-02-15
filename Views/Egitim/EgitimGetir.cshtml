@@ -1,0 +1,45 @@
+﻿@model My_CV.Models.Entity.TBL_Egitim
+@{
+    ViewBag.Title = "EgitimGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content-header">
+    <h2> Eğitim Düzenleme Sayfası</h2>
+
+    <form method="post">
+        <ul class="fa-ul mb-md-5">
+            <li class="mb-3">
+
+                @Html.Label("Başlık")
+                @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Baslik, "", new { @style = "color:red" })
+            </li>
+            <li class="mb-3">
+
+                @Html.Label("AltBaşlık")
+                @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
+
+            </li>
+            <li class="mb-3">
+
+                @Html.Label("AltBaşlık2")
+                @Html.TextBoxFor(x => x.AltBaslik2, new { @class = "form-control" })
+            </li>
+            <li class="mb-3">
+
+                @Html.Label("GNO")
+                @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.GNO, "")
+            </li>
+            <li class="mb-3">
+
+                @Html.Label("Tarih")
+                @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Tarih, "")
+            </li>
+            <button class="btn btn-info">Düzenle</button>
+        </ul>
+    </form>
+</section>
+

@@ -1,0 +1,23 @@
+﻿@using My_CV.Models.Entity
+@model List<TBL_Projeler>
+<div class="resume-section-content">
+    <h2 class="mb-5">Projeler</h2>
+
+    @foreach (var x in Model)
+    {
+        <div class="subheading mb-3">@x.Baslik1</div>
+
+        <div>@x.Baslik2</div>
+
+        <ul class="fa-ul mb-md-5">
+
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                @x.Aciklama1
+
+            </li>
+            <p>@x.Aciklama2</p>
+        </ul>
+        
+    }
+</div>

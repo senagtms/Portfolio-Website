@@ -1,0 +1,41 @@
+﻿@using My_CV.Models.Entity
+@model List<TBL_Iletisim>
+    <div class="resume-section-content">
+    <form method="post">
+        <h2 class="mb-5">Bana Ulaşın</h2>
+        <ul class="fa-ul mb-md-5">
+
+            <li>
+                <span class="subheading mb-5"></span>
+                <label>Ad Soyad: </label>
+                <input type="text" class="form-control" name="AdSoyad" />
+
+            </li>
+            <li>
+                <span class="subheading mb-5"></span>
+                <label>Mail: </label>
+                <input type="text" class="form-control" name="Mail"/>
+
+            </li>
+            <li>
+                <span class="subheading mb-5"></span>
+                <label>Konu: </label>
+                <input type="text" class="form-control" name="Konu" />
+
+            </li>
+            <li>
+                <span class="subheading mb-5"></span>
+                <label>Mesaj: </label>
+                <input type="text" class="form-control" name="Mesaj" />
+                <br />
+                <button class="btn btn-info"> Gönder </button>
+            </li>
+
+        </ul>
+
+
+    </form>
+
+    
+   
+</div>

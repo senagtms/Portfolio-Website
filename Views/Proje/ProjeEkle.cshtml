@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "ProjeEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<section class="content-header">
+    <h2>Yeni Proje Ekle</h2>
+
+    <form class="form-group" method="post">
+        <ul class="fa-ul mb-md-5">
+
+            <li class="mb-3">
+                <span class="subheading mb-5"></span>
+                <label>Proje adı</label>
+                <input type="text" class="form-control" name="Baslik1" />
+            </li>
+            <li class="mb-3">
+                <span class="subheading mb-5"></span>
+                <label>Programlama dili</label>
+                <input type="text" class="form-control" name="Baslik2" />
+            </li>
+            <li class="mb-3">
+                <span class="subheading mb-5"></span>
+                <label>Açıklama</label>
+                <textarea class="form-control" name="Aciklama1" rows="5"></textarea>
+            </li>
+            <li class="mb-3">
+                <span class="subheading mb-5"></span>
+                <label>Açıklama</label>
+                <textarea class="form-control" name="Aciklama2" rows="5"></textarea>
+            </li>
+         
+            <button class="btn btn-info"> Kaydet</button>
+
+        </ul>
+    </form>
+</section>

@@ -1,0 +1,109 @@
+﻿@using My_CV.Models.Entity
+@model List<TBL_Yetenekler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}@{ string renk = "";}
+@{ string labelrenk = "";}
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <section class="content-header">
+            <h2>Yeteneklerim</h2>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Yetenekler Tablosu</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <a href="/Yetenek/YetenekEkle/" class="btn btn-info">Yeni yetenek ekle</a>
+                                <br /><br />
+                       
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Yetenek</th>
+                                            <th>Derece</th>
+                                            <th style="width: 40px">Oran</th>
+                                            <th style="width: 40px">Sil</th>
+                                            <th style="width: 40px">Düzenle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach(var item in Model) {
+                                            if(item.Oran >= 0 && item.Oran <= 50) {
+                                                renk = "progress-bar bg-danger";
+                                                labelrenk = "badge bg-danger";
+                                            }
+                                            if(item.Oran >= 51 && item.Oran <= 70) {
+                                                renk = "progress-bar bg-warning";
+                                                labelrenk = "badge bg-warning";
+                                            }
+                                            if(item.Oran >= 71 && item.Oran <= 100) {
+                                                renk = "progress-bar bg-success";
+                                                labelrenk = "badge bg-success";
+
+                                            }
+                                        <tr>
+                                            <td>@item.ID</td>
+                                            <td>@item.Yetenek</td>
+
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="@renk" style="width: @item.Oran%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="@labelrenk">@item.Oran%</span></td>
+                                            <td><a href="/Yetenek/YetenekSil/@item.ID" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Yetenek/YetenekGetir/@item.ID" class="btn btn-warning">Düzenle</a></td>
+                                        </tr>}
+                                      
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer clearfix">
+                                <ul class="pagination pagination-sm m-0 float-right">
+                                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+</body>
+</html>
+
+

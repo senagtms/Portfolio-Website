@@ -1,0 +1,33 @@
+﻿@model My_CV.Models.Entity.TBL_Yetenekler
+@{
+    ViewBag.Title = "YetenekGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yetenek düzenleme</h2>
+
+<section class="content-header">
+    <h2>Deneyim Güncelleme</h2>
+
+    <form method="post">
+        <ul class="fa-ul mb-md-5">
+            <li class="mb-3">
+
+                @Html.Label("Yetenek ID", new { @class = "form-control" })
+                @Html.TextBoxFor(x => x.ID)
+            </li>
+            <li class="mb-3">
+
+                @Html.Label("Yetenek", new { @class = "form-control" })
+                @Html.TextAreaFor(x => x.Yetenek);
+            </li>
+          <li class="mb-3">
+
+                @Html.Label("Oran", new { @class = "form-control" })
+                @Html.TextBoxFor(x => x.Oran);
+            </li>
+          
+            <button class="btn btn-info"> Güncelle</button>
+        </ul>
+    </form>
+</section>
